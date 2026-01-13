@@ -1,260 +1,192 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { FiCheckCircle, FiArrowRight, FiTarget, FiUsers, FiAward } from 'react-icons/fi'
-
-export default function APropos() {
+export default function About() {
   const values = [
     {
-      icon: <FiTarget size={32} />,
-      title: 'Excellence',
-      description: 'Nous visons l\'excellence dans chaque projet que nous réalisons',
-    },
-    {
-      icon: <FiUsers size={32} />,
-      title: 'Proximité',
-      description: 'Un accompagnement personnalisé et une écoute attentive',
-    },
-    {
-      icon: <FiAward size={32} />,
       title: 'Innovation',
-      description: 'Des solutions à la pointe de la technologie',
+      description: 'À la pointe des dernières technologies pour créer des solutions modernes',
+      icon: (
+        <svg className="w-10 h-10 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
     },
-  ]
-
-  const methodology = [
-    'Écoute active de vos besoins',
-    'Analyse approfondie de votre contexte',
-    'Proposition de solutions adaptées',
-    'Mise en œuvre avec suivi rigoureux',
-    'Optimisation continue',
+    {
+      title: 'Expertise',
+      description: 'Formation professionnelle en informatique et passion pour l\'automatisation',
+      icon: (
+        <svg className="w-10 h-10 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Engagement',
+      description: 'Déterminés à faire évoluer votre entreprise grâce à la technologie',
+      icon: (
+        <svg className="w-10 h-10 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Personnalisation',
+      description: 'Chaque solution est conçue sur mesure pour répondre à vos besoins spécifiques',
+      icon: (
+        <svg className="w-10 h-10 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+        </svg>
+      ),
+    },
   ]
 
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-white section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <h1 className="heading-1 mb-6">À propos de nous</h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Spécialistes en services informatiques sur-mesure, nous accompagnons 
-              les entreprises dans leur transformation digitale.
-            </p>
-          </motion.div>
+    <div className="relative min-h-screen pt-24 pb-20 px-4 bg-mesh">
+      <div className="container mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fadeInUp">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            À Propos de SwissAutoFlow
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Une entreprise suisse innovante fondée par des étudiants passionnés d'informatique
+          </p>
         </div>
-      </section>
 
-      {/* Who We Are */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="heading-2 mb-6">Qui sommes-nous ?</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p>
-                  Nous sommes une équipe de professionnels passionnés par l'informatique 
-                  et l'innovation. Notre mission est d'aider les entreprises à optimiser 
-                  leurs systèmes informatiques pour gagner en efficacité et en productivité.
+        {/* Story Section */}
+        <div className="mb-20 animate-fadeInUp">
+          <div className="bg-gradient-to-br from-red-50 to-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Notre Histoire
+                </h2>
+                <p className="text-gray-600 text-lg mb-4 leading-relaxed">
+                  SwissAutoFlow est une entreprise suisse fondée par des étudiants en informatique professionnelle. 
+                  Conscients des défis technologiques auxquels font face les entreprises modernes, nous avons décidé 
+                  de mettre nos compétences au service de leur transformation digitale.
                 </p>
-                <p>
-                  Avec une expertise solide en diagnostic, développement sur-mesure et 
-                  automatisation, nous proposons des solutions adaptées à chaque contexte 
-                  et à chaque besoin.
+                <p className="text-gray-600 text-lg mb-4 leading-relaxed">
+                  Notre mission est simple : analyser la situation technologique actuelle de votre entreprise, 
+                  comprendre vos processus, et créer une application personnalisée qui regroupe tous vos outils 
+                  en automatisant un maximum de tâches.
                 </p>
-                <p>
-                  Notre approche se base sur l'écoute, la transparence et l'excellence 
-                  technique pour garantir la réussite de chaque projet.
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  Grâce à notre formation en informatique et notre passion pour l'innovation, nous créons des solutions 
+                  sur mesure - sites web, applications mobiles, systèmes d'automatisation - qui simplifient vraiment 
+                  le quotidien des entreprises suisses.
                 </p>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 shadow-2xl">
-                <div className="bg-white rounded-lg p-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                        <FiUsers size={32} className="text-primary-600" />
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-gray-900">10+</div>
-                        <div className="text-gray-600">Clients satisfaits</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                        <FiAward size={32} className="text-primary-600" />
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-gray-900">20+</div>
-                        <div className="text-gray-600">Projets réalisés</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                        <FiTarget size={32} className="text-primary-600" />
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-gray-900">1 an</div>
-                        <div className="text-gray-600">D'expérience</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="heading-2 mb-4">Nos Valeurs</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Les principes qui guident notre travail au quotidien
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-lg text-center"
-              >
-                <div className="text-primary-600 mb-4 flex justify-center">{value.icon}</div>
-                <h3 className="heading-3 mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Methodology */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-2 lg:order-1"
-            >
-              <div className="bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-1">
-                <div className="bg-white rounded-xl p-8">
-                  <div className="space-y-4">
-                    {methodology.map((step, index) => (
-                      <div key={index} className="flex items-center space-x-4">
-                        <div className="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                          {index + 1}
-                        </div>
-                        <div className="text-gray-700 font-medium">{step}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-1 lg:order-2"
-            >
-              <h2 className="heading-2 mb-6">Notre Méthodologie</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Une approche structurée et éprouvée pour garantir le succès de votre projet
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Nous suivons une méthodologie rigoureuse qui place vos besoins au centre 
-                de notre démarche. Chaque étape est pensée pour vous apporter de la valeur 
-                et garantir la réussite de votre transformation digitale.
-              </p>
-              <Link href="/rendez-vous" className="btn-primary inline-flex items-center">
-                Discutons de votre projet
-                <FiArrowRight className="ml-2" />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Trust Us */}
-      <section className="section-padding bg-primary-600 text-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="heading-2 text-white mb-6">Pourquoi nous faire confiance ?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              <div className="flex items-start space-x-3">
-                <FiCheckCircle size={24} className="text-primary-200 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold mb-2">Expertise technique</h3>
-                  <p className="text-primary-100">Une expertise solide dans le domaine informatique</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <FiCheckCircle size={24} className="text-primary-200 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold mb-2">Solutions sur-mesure</h3>
-                  <p className="text-primary-100">Chaque projet est adapté à vos besoins spécifiques</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <FiCheckCircle size={24} className="text-primary-200 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold mb-2">Support continu</h3>
-                  <p className="text-primary-100">Un accompagnement même après la livraison</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <FiCheckCircle size={24} className="text-primary-200 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold mb-2">Transparence totale</h3>
-                  <p className="text-primary-100">Communication claire à chaque étape du projet</p>
+              <div className="relative">
+                <div className="aspect-square rounded-2xl bg-gradient-to-br from-red-500 to-red-600 p-8 flex items-center justify-center shadow-2xl">
+                  <svg className="w-full h-full text-white opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </section>
+
+        {/* Mission Section */}
+        <div className="mb-20 animate-fadeInUp">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Notre Mission
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              Permettre aux entreprises suisses de se concentrer sur leur cœur de métier en automatisant 
+              leurs processus technologiques et en centralisant leurs outils dans des applications personnalisées.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              {[
+                { 
+                  icon: (
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  ),
+                  title: 'Analyse', 
+                  desc: 'Comprendre vos besoins réels',
+                  gradient: 'from-red-500 to-red-600'
+                },
+                { 
+                  icon: (
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  ),
+                  title: 'Création', 
+                  desc: 'Développer des solutions sur mesure',
+                  gradient: 'from-red-500 to-red-600'
+                },
+                { 
+                  icon: (
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  ),
+                  title: 'Automatisation', 
+                  desc: 'Optimiser vos processus',
+                  gradient: 'from-red-500 to-violet-600'
+                },
+              ].map((item, index) => (
+                <div key={index} className="bg-white border border-gray-100 rounded-xl p-6 card-hover shadow-sm">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 shadow-lg`}>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Values Section */}
+        <div className="mb-20 animate-fadeInUp">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">
+            Nos Valeurs
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-100 rounded-2xl p-8 text-center card-hover shadow-sm animate-fadeInUp"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="mb-4 flex justify-center">
+                  {value.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center animate-fadeInUp">
+          <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-12 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 section-pattern opacity-10"></div>
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Travaillons Ensemble
+              </h2>
+              <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
+                Découvrez comment SwissAutoFlow peut transformer votre entreprise grâce à l'automatisation
+              </p>
+              <a
+                href="/contact"
+                className="inline-block px-10 py-4 bg-white text-red-700 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl"
+              >
+                Contactez-Nous
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
-

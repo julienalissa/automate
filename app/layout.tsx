@@ -1,20 +1,16 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import ClientWrapper from '@/components/ClientWrapper'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import InteractiveGrid from '@/components/InteractiveGrid'
+import CursorGlow from '@/components/CursorGlow'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Services Informatiques sur-mesure - Automatisation & Optimisation',
-  description: 'Simplifiez votre système informatique. Diagnostic, refonte sur-mesure, automatisation et suivi. Gagnez du temps et de l\'efficacité.',
-  keywords: 'services informatiques, automatisation, refonte système, diagnostic IT, optimisation informatique',
-  authors: [{ name: 'Services Informatiques' }],
-  openGraph: {
-    title: 'Services Informatiques sur-mesure',
-    description: 'Simplifiez votre système informatique. Diagnostic, refonte sur-mesure, automatisation et suivi.',
-    type: 'website',
-  },
+  title: 'SwissAutoFlow - Solutions Professionnelles en Suisse',
+  description: 'SwissAutoFlow, votre partenaire de confiance en Suisse pour des services exceptionnels et des solutions sur mesure',
 }
 
 export default function RootLayout({
@@ -25,9 +21,13 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={inter.className}>
-        <ClientWrapper>
+        <InteractiveGrid />
+        <CursorGlow />
+        <Navbar />
+        <main className="min-h-screen relative z-10">
           {children}
-        </ClientWrapper>
+        </main>
+        <Footer />
       </body>
     </html>
   )
