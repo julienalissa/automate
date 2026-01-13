@@ -1,6 +1,18 @@
+'use client'
+
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
+  const navLinks = [
+    { label: t('nav.home'), href: '/' },
+    { label: t('nav.services'), href: '/services' },
+    { label: t('nav.about'), href: '/a-propos' },
+    { label: t('nav.contact'), href: '/contact' },
+  ]
+
   return (
     <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
       <div className="absolute inset-0 section-pattern opacity-5"></div>
@@ -17,22 +29,17 @@ export default function Footer() {
                 <rect x="9" y="6" width="6" height="12" />
                 <rect x="6" y="9" width="12" height="6" />
               </svg>
-              MADE IN SWITZERLAND
+              {t('footer.made').toUpperCase()}
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed text-lg">
-              Solutions professionnelles d'automatisation et d'applications sur mesure
+              {t('footer.tagline')}
             </p>
           </div>
 
           <div>
-            <h4 className="text-xl font-black mb-6 text-white">Navigation</h4>
+            <h4 className="text-xl font-black mb-6 text-white">{t('footer.links')}</h4>
             <ul className="space-y-4">
-              {[
-                { label: 'Accueil', href: '/' },
-                { label: 'Services', href: '/services' },
-                { label: 'À Propos', href: '/a-propos' },
-                { label: 'Contact', href: '/contact' },
-              ].map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -47,7 +54,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xl font-black mb-6 text-white">Contact</h4>
+            <h4 className="text-xl font-black mb-6 text-white">{t('footer.contact')}</h4>
             <ul className="space-y-5">
               <li className="flex items-start text-slate-400 group hover:text-white transition-colors">
                 <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center mr-4 group-hover:bg-red-500/30 transition-colors">
@@ -72,7 +79,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span className="text-sm font-medium">Suisse</span>
+                <span className="text-sm font-medium">{t('footer.location')}</span>
               </li>
             </ul>
           </div>
@@ -81,7 +88,7 @@ export default function Footer() {
         <div className="border-t border-slate-700/50 pt-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-500 text-sm font-medium">
-              &copy; 2025 SwissAutoFlow. Tous droits réservés.
+              &copy; 2025 SwissAutoFlow. {t('footer.rights')}
             </p>
             <div className="flex items-center gap-2">
               <span className="text-slate-500 text-sm">Crafted with</span>

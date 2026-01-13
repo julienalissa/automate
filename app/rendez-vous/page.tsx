@@ -1,18 +1,22 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 import PointingCursor from '@/components/PointingCursor'
 
 export default function Appointment() {
+  const { t } = useLanguage()
+
   useEffect(() => {
     document.body.classList.add('pointing-cursor-active')
     return () => {
       document.body.classList.remove('pointing-cursor-active')
     }
   }, [])
+
   const contactMethods = [
     {
-      title: 'Email',
+      title: t('contact.email'),
       value: 'swissautoflow@hotmail.com',
       icon: (
         <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,10 +24,10 @@ export default function Appointment() {
         </svg>
       ),
       link: 'mailto:swissautoflow@hotmail.com',
-      cta: 'Envoyer un email'
+      cta: t('contact.email.cta')
     },
     {
-      title: 'Téléphone',
+      title: t('contact.phone'),
       value: '+41 76 745 32 25',
       icon: (
         <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,17 +35,17 @@ export default function Appointment() {
         </svg>
       ),
       link: 'tel:+41767453225',
-      cta: 'Appeler maintenant'
+      cta: t('contact.phone.cta')
     },
   ]
 
   const services = [
-    'Analyse Technologique',
-    'Application Web Sur Mesure',
-    'Application Mobile',
-    'Automatisation Complète',
-    'Intégration Systèmes',
-    'Maintenance & Support',
+    t('appointment.service1'),
+    t('appointment.service2'),
+    t('appointment.service3'),
+    t('appointment.service4'),
+    t('appointment.service5'),
+    t('appointment.service6'),
   ]
 
   return (
@@ -51,10 +55,10 @@ export default function Appointment() {
         {/* Header */}
         <div className="text-center mb-12 animate-fadeInUp">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900">
-            Prendre Rendez-vous
+            {t('appointment.title')}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Contactez-nous directement par email ou téléphone pour discuter de votre projet
+            {t('appointment.subtitle')}
           </p>
         </div>
 
@@ -64,7 +68,7 @@ export default function Appointment() {
             <a
               key={index}
               href={method.link}
-              data-pointing-target={method.title === 'Email' ? 'email' : undefined}
+              data-pointing-target={method.title === t('contact.email') ? 'email' : undefined}
               className="bg-white rounded-2xl p-8 card-hover border border-gray-100 shadow-sm animate-fadeInUp text-center hover-shimmer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -88,10 +92,10 @@ export default function Appointment() {
         {/* Services Info */}
         <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm animate-fadeInUp">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-            Nos Services Disponibles
+            {t('appointment.services.title')}
           </h2>
           <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
-            Nous nous engageons à vous répondre rapidement. N'hésitez pas à nous contacter pour discuter de votre projet !
+            {t('appointment.services.desc')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {services.map((service, index) => (

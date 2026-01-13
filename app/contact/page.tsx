@@ -1,18 +1,22 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 import PointingCursor from '@/components/PointingCursor'
 
 export default function Contact() {
+  const { t } = useLanguage()
+
   useEffect(() => {
     document.body.classList.add('pointing-cursor-active')
     return () => {
       document.body.classList.remove('pointing-cursor-active')
     }
   }, [])
+
   const contactInfo = [
     { 
-      label: 'Email', 
+      label: t('contact.email'), 
       value: 'swissautoflow@hotmail.com',
       icon: (
         <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,10 +24,10 @@ export default function Contact() {
         </svg>
       ),
       link: 'mailto:swissautoflow@hotmail.com',
-      cta: 'Envoyer un email'
+      cta: t('contact.email.cta')
     },
     { 
-      label: 'Téléphone', 
+      label: t('contact.phone'), 
       value: '+41 76 745 32 25',
       icon: (
         <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,7 +35,7 @@ export default function Contact() {
         </svg>
       ),
       link: 'tel:+41767453225',
-      cta: 'Appeler maintenant'
+      cta: t('contact.phone.cta')
     },
   ]
 
@@ -42,10 +46,10 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center mb-12 animate-fadeInUp">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900">
-            Contactez-Nous
+            {t('contact.title')}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            N'hésitez pas à nous contacter directement pour discuter de votre projet d'automatisation
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -55,7 +59,7 @@ export default function Contact() {
             <a
               key={index}
               href={info.link}
-              data-pointing-target={info.label === 'Email' ? 'email' : undefined}
+              data-pointing-target={info.label === t('contact.email') ? 'email' : undefined}
               className="bg-white rounded-2xl p-8 card-hover border border-gray-100 shadow-sm animate-fadeInUp text-center hover-shimmer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -79,30 +83,30 @@ export default function Contact() {
         {/* Info Section */}
         <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8 border border-gray-100 shadow-sm animate-fadeInUp text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Nous Sommes Là Pour Vous
+            {t('contact.info.title')}
           </h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Que vous ayez une question, un projet en tête ou simplement besoin de conseils sur l'automatisation de votre entreprise, nous serons ravis d'échanger avec vous !
+            {t('contact.info.desc')}
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex items-center">
               <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              Réponse rapide
+              {t('contact.info.fast')}
             </div>
             <div className="flex items-center">
               <svg className="w-5 h-5 text-emerald-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              Conseil gratuit
+              {t('contact.info.free')}
             </div>
             <div className="flex items-center">
               <svg className="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <rect x="9" y="6" width="6" height="12" />
                 <rect x="6" y="9" width="12" height="6" />
               </svg>
-              100% Suisse
+              {t('contact.info.swiss')}
             </div>
           </div>
         </div>
