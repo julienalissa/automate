@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-mesh">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4">
+      <section className="relative pt-40 pb-20 px-4">
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fadeInUp">

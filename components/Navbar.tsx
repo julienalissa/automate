@@ -61,7 +61,7 @@ export default function Navbar() {
             <LanguageSwitcher />
             <Link
               href="/rendez-vous"
-              className="px-6 py-2 btn-primary text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover-shimmer whitespace-nowrap w-[170px] text-center inline-block"
+              className="px-6 py-2 btn-primary text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover-shimmer whitespace-nowrap min-w-[170px] flex items-center justify-center"
             >
               {t('nav.appointment')}
             </Link>

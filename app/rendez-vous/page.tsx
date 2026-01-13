@@ -1,29 +1,20 @@
 'use client'
 
-import { useEffect } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
-import PointingCursor from '@/components/PointingCursor'
 
 export default function Appointment() {
   const { t } = useLanguage()
 
-  useEffect(() => {
-    document.body.classList.add('pointing-cursor-active')
-    return () => {
-      document.body.classList.remove('pointing-cursor-active')
-    }
-  }, [])
-
   const contactMethods = [
     {
       title: t('contact.email'),
-      value: 'swissautoflow@hotmail.com',
+      value: 'info@swissautoflow.ch',
       icon: (
         <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      link: 'mailto:swissautoflow@hotmail.com',
+      link: 'mailto:info@swissautoflow.ch',
       cta: t('contact.email.cta')
     },
     {
@@ -49,8 +40,7 @@ export default function Appointment() {
   ]
 
   return (
-    <div className="relative pt-20 pb-12 px-4 bg-mesh">
-      <PointingCursor />
+    <div className="relative pt-32 pb-12 px-4 bg-mesh">
       <div className="container mx-auto max-w-5xl">
         {/* Header */}
         <div className="text-center mb-12 animate-fadeInUp">
@@ -68,7 +58,6 @@ export default function Appointment() {
             <a
               key={index}
               href={method.link}
-              data-pointing-target={method.title === t('contact.email') ? 'email' : undefined}
               className="bg-white rounded-2xl p-8 card-hover border border-gray-100 shadow-sm animate-fadeInUp text-center hover-shimmer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >

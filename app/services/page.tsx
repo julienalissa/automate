@@ -99,7 +99,7 @@ export default function Services() {
   ]
 
   return (
-    <div className="relative min-h-screen pt-24 pb-20 px-4 bg-mesh">
+    <div className="relative min-h-screen pt-32 pb-20 px-4 bg-mesh">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fadeInUp">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">

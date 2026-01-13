@@ -1,33 +1,24 @@
 'use client'
 
-import { useEffect } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
-import PointingCursor from '@/components/PointingCursor'
 
 export default function Contact() {
   const { t } = useLanguage()
 
-  useEffect(() => {
-    document.body.classList.add('pointing-cursor-active')
-    return () => {
-      document.body.classList.remove('pointing-cursor-active')
-    }
-  }, [])
-
-  const contactInfo = [
-    { 
-      label: t('contact.email'), 
-      value: 'swissautoflow@hotmail.com',
+  const contactMethods = [
+    {
+      title: t('contact.email'),
+      value: 'info@swissautoflow.ch',
       icon: (
         <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      link: 'mailto:swissautoflow@hotmail.com',
+      link: 'mailto:info@swissautoflow.ch',
       cta: t('contact.email.cta')
     },
-    { 
-      label: t('contact.phone'), 
+    {
+      title: t('contact.phone'),
       value: '+41 76 745 32 25',
       icon: (
         <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,10 +30,18 @@ export default function Contact() {
     },
   ]
 
+  const services = [
+    t('appointment.service1'),
+    t('appointment.service2'),
+    t('appointment.service3'),
+    t('appointment.service4'),
+    t('appointment.service5'),
+    t('appointment.service6'),
+  ]
+
   return (
-    <div className="relative pt-20 pb-12 px-4 bg-mesh">
-      <PointingCursor />
-      <div className="container mx-auto max-w-6xl">
+    <div className="relative pt-32 pb-12 px-4 bg-mesh">
+      <div className="container mx-auto max-w-5xl">
         {/* Header */}
         <div className="text-center mb-12 animate-fadeInUp">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900">
@@ -53,25 +52,24 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-          {contactInfo.map((info, index) => (
+        {/* Contact Methods */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {contactMethods.map((method, index) => (
             <a
               key={index}
-              href={info.link}
-              data-pointing-target={info.label === t('contact.email') ? 'email' : undefined}
+              href={method.link}
               className="bg-white rounded-2xl p-8 card-hover border border-gray-100 shadow-sm animate-fadeInUp text-center hover-shimmer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="mb-4 flex justify-center">
-                {info.icon}
+                {method.icon}
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">{info.label}</h3>
-              <p className="text-lg text-gray-600 mb-6 font-medium break-words">{info.value}</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">{method.title}</h3>
+              <p className="text-lg text-gray-600 mb-6 font-medium">{method.value}</p>
               
               <span className="inline-flex items-center text-gray-700 font-semibold">
-                {info.cta}
+                {method.cta}
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -80,34 +78,26 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* Info Section */}
-        <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8 border border-gray-100 shadow-sm animate-fadeInUp text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            {t('contact.info.title')}
+        {/* Services Info */}
+        <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm animate-fadeInUp">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+            {t('appointment.services.title')}
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            {t('contact.info.desc')}
+          <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
+            {t('appointment.services.desc')}
           </p>
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              {t('contact.info.fast')}
-            </div>
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-emerald-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              {t('contact.info.free')}
-            </div>
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <rect x="9" y="6" width="6" height="12" />
-                <rect x="6" y="9" width="12" height="6" />
-              </svg>
-              {t('contact.info.swiss')}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="flex items-center p-3 bg-gray-50 rounded-lg"
+              >
+                <svg className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 font-medium text-sm">{service}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

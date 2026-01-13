@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import InteractiveGrid from '@/components/InteractiveGrid'
+import ConditionalGrid from '@/components/ConditionalGrid'
 import CursorGlow from '@/components/CursorGlow'
 import Providers from '@/components/Providers'
 
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className={inter.className}>
         <Providers>
-          <InteractiveGrid />
+          <ConditionalGrid />
           <CursorGlow />
           <Navbar />
           <main className="min-h-screen relative z-10">
