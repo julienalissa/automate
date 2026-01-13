@@ -29,12 +29,12 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg py-3'
-          : 'bg-white/80 backdrop-blur-sm py-5'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between h-20">
           <Link
             href="/"
             className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300"
@@ -48,7 +48,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-red-700 font-medium transition-colors duration-300 relative group"
+                className="text-gray-700 hover:text-red-700 font-medium transition-colors duration-300 relative group whitespace-nowrap"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all duration-300"></span>
@@ -57,7 +57,7 @@ export default function Navbar() {
             <LanguageSwitcher />
             <Link
               href="/rendez-vous"
-              className="px-6 py-2 btn-primary text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover-shimmer"
+              className="px-6 py-2 btn-primary text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover-shimmer whitespace-nowrap min-w-[140px] text-center"
             >
               {t('nav.appointment')}
             </Link>
