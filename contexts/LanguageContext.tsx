@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
-type Language = 'fr' | 'en'
+type Language = 'fr' | 'en' | 'de'
 
 interface LanguageContextType {
   language: Language
@@ -324,6 +324,162 @@ const translations = {
     'footer.location': 'Switzerland',
     'footer.made': 'Made in Switzerland',
     'footer.rights': 'All rights reserved.',
+  },
+  de: {
+    // Navbar
+    'nav.home': 'Startseite',
+    'nav.services': 'Dienstleistungen',
+    'nav.about': 'Über Uns',
+    'nav.contact': 'Kontakt',
+    'nav.appointment': 'Termin Buchen',
+
+    // Home Page
+    'home.title': 'SwissAutoFlow',
+    'home.subtitle': 'Wir bündeln alle Ihre Tools in einer maßgeschneiderten Anwendung',
+    'home.tagline': 'Analyse • Entwicklung • Automatisierung',
+    'home.cta.start': 'Kostenlos Starten',
+    'home.cta.services': 'Unsere Dienstleistungen',
+    
+    'home.services.title': 'Drei Einfache Schritte',
+    'home.services.subtitle': 'Unser Ansatz zur Transformation Ihres Unternehmens',
+    
+    'home.service1.title': 'Analyse & Audit',
+    'home.service1.desc': 'Vollständige Bewertung Ihrer aktuellen technologischen Infrastruktur',
+    
+    'home.service2.title': 'Maßgeschneiderte Anwendungen',
+    'home.service2.desc': 'Personalisierte Entwicklung, die alle Ihre Tools in einer Lösung bündelt',
+    
+    'home.service3.title': 'Vollständige Automatisierung',
+    'home.service3.desc': 'Automatisierung Ihrer Prozesse zur Maximierung Ihrer Produktivität',
+    
+    'home.benefits.title': 'Warum SwissAutoFlow?',
+    'home.benefits.subtitle': 'Ein umfassender Ansatz zur Vereinfachung Ihrer Technologie',
+    
+    'home.benefit1.title': 'Alles Zentralisiert',
+    'home.benefit1.desc': 'Eine einzige Anwendung, die alle Ihre Tools und Geschäftsprozesse bündelt',
+    
+    'home.benefit2.title': 'Personalisierte',
+    'home.benefit2.desc': '100% maßgeschneiderte Lösung, die auf Ihre spezifischen Bedürfnisse zugeschnitten ist',
+    
+    'home.benefit3.title': 'Automatisiert',
+    'home.benefit3.desc': 'Beseitigen Sie repetitive Aufgaben und sparen Sie wertvolle Zeit',
+    
+    'home.benefit4.title': 'Skalierbar',
+    'home.benefit4.desc': 'Lösungen, die mit Ihrem Unternehmen wachsen',
+    
+    'home.cta.final.title': 'Bereit, Ihr Unternehmen zu Automatisieren?',
+    'home.cta.final.subtitle': 'Lassen Sie uns über Ihr Projekt sprechen und entdecken, wie wir Ihnen helfen können',
+    'home.cta.final.button': 'Jetzt Starten',
+
+    // Services Page
+    'services.title': 'Unsere Dienstleistungen',
+    'services.subtitle': 'Vollständige Lösungen zur Transformation Ihres Unternehmens',
+    
+    'services.analysis.title': 'Technologieanalyse',
+    'services.analysis.desc': 'Vollständige Prüfung Ihrer Infrastruktur zur Identifizierung von Möglichkeiten',
+    'services.analysis.feature1': 'Vollständige Prüfung Ihrer aktuellen Infrastruktur',
+    'services.analysis.feature2': 'Identifizierung von Prozessen zur Automatisierung',
+    'services.analysis.feature3': 'Personalisierte Empfehlungen',
+    'services.analysis.feature4': 'Detaillierter Bericht mit Aktionsplan',
+    
+    'services.webapp.title': 'Web-Anwendung',
+    'services.webapp.desc': 'Entwicklung moderner und leistungsstarker Web-Anwendungen',
+    'services.webapp.feature1': 'Modernes und responsives Design',
+    'services.webapp.feature2': 'Intuitive und personalisierte Benutzeroberfläche',
+    'services.webapp.feature3': 'Integration mit Ihren bestehenden Tools',
+    'services.webapp.feature4': 'Sichere Hosting in der Schweiz',
+    
+    'services.mobile.title': 'Mobile Anwendung',
+    'services.mobile.desc': 'Native iOS- und Android-Anwendungen für Ihr Unternehmen',
+    'services.mobile.feature1': 'iOS- und Android-Entwicklung',
+    'services.mobile.feature2': 'Native und flüssige Benutzeroberfläche',
+    'services.mobile.feature3': 'Echtzeit-Cloud-Synchronisation',
+    'services.mobile.feature4': 'Personalisierte Push-Benachrichtigungen',
+    
+    'services.automation.title': 'Automatisierung',
+    'services.automation.desc': 'Vollständige Automatisierung Ihrer Geschäftsprozesse',
+    'services.automation.feature1': 'Automatisierung repetitiver Aufgaben',
+    'services.automation.feature2': 'Integration zwischen Ihren verschiedenen Tools',
+    'services.automation.feature3': 'Maßgeschneiderte Workflows',
+    'services.automation.feature4': 'Zeitersparnis und Fehlerreduzierung',
+    
+    'services.integration.title': 'Systemintegration',
+    'services.integration.desc': 'Verbinden Sie alle Ihre Tools in einem Ökosystem',
+    'services.integration.feature1': 'Verbindung Ihrer bestehenden Software',
+    'services.integration.feature2': 'Maßgeschneiderte APIs',
+    'services.integration.feature3': 'Echtzeit-Datensynchronisation',
+    'services.integration.feature4': 'Sichere Datenmigration',
+    
+    'services.support.title': 'Support & Wartung',
+    'services.support.desc': 'Kontinuierliche Unterstützung zur Gewährleistung Ihres Erfolgs',
+    'services.support.feature1': 'Reaktiver technischer Support',
+    'services.support.feature2': 'Regelmäßige Updates',
+    'services.support.feature3': 'Schulung Ihrer Teams',
+    'services.support.feature4': 'Entwicklung nach Ihren Bedürfnissen',
+    
+    'services.cta': 'Mehr Erfahren',
+
+    // About Page
+    'about.title': 'Über SwissAutoFlow',
+    'about.subtitle': 'Ein innovatives Schweizer Unternehmen, gegründet von leidenschaftlichen IT-Studenten',
+    
+    'about.story.title': 'Unsere Geschichte',
+    'about.story.p1': 'SwissAutoFlow ist ein Schweizer Unternehmen, gegründet von professionellen IT-Studenten. Wir sind uns der technologischen Herausforderungen bewusst, denen moderne Unternehmen gegenüberstehen, und haben beschlossen, unsere Fähigkeiten in den Dienst ihrer digitalen Transformation zu stellen.',
+    'about.story.p2': 'Unsere Mission ist einfach: Analysieren Sie die aktuelle technologische Situation Ihres Unternehmens, verstehen Sie Ihre Prozesse und erstellen Sie eine personalisierte Anwendung, die alle Ihre Tools bündelt und so viele Aufgaben wie möglich automatisiert.',
+    'about.story.p3': 'Dank unserer IT-Ausbildung und unserer Leidenschaft für Innovation erstellen wir maßgeschneiderte Lösungen - Websites, mobile Anwendungen, Automatisierungssysteme - die das tägliche Leben Schweizer Unternehmen wirklich vereinfachen.',
+    
+    'about.mission.title': 'Unsere Mission',
+    'about.mission.desc': 'Schweizer Unternehmen ermöglichen, sich auf ihr Kerngeschäft zu konzentrieren, indem sie ihre technologischen Prozesse automatisieren und ihre Tools in personalisierten Anwendungen zentralisieren.',
+    
+    'about.mission.step1.title': 'Analyse',
+    'about.mission.step1.desc': 'Verstehen Sie Ihre wirklichen Bedürfnisse',
+    
+    'about.mission.step2.title': 'Erstellung',
+    'about.mission.step2.desc': 'Entwickeln Sie maßgeschneiderte Lösungen',
+    
+    'about.mission.step3.title': 'Automatisierung',
+    'about.mission.step3.desc': 'Optimieren Sie Ihre Prozesse',
+    
+    'about.cta.title': 'Lassen Sie Uns Zusammenarbeiten',
+    'about.cta.desc': 'Entdecken Sie, wie SwissAutoFlow Ihr Unternehmen durch Automatisierung transformieren kann',
+    'about.cta.button': 'Kontaktieren Sie Uns',
+
+    // Contact Page
+    'contact.title': 'Kontaktieren Sie Uns',
+    'contact.subtitle': 'Zögern Sie nicht, uns direkt zu kontaktieren, um über Ihr Automatisierungsprojekt zu sprechen',
+    
+    'contact.email': 'E-Mail',
+    'contact.phone': 'Telefon',
+    'contact.email.cta': 'E-Mail senden',
+    'contact.phone.cta': 'Jetzt anrufen',
+    
+    'contact.info.title': 'Wir Sind Für Sie Da',
+    'contact.info.desc': 'Ob Sie eine Frage haben, ein Projekt im Kopf oder einfach nur Beratung zur Automatisierung Ihres Unternehmens benötigen, wir freuen uns auf den Austausch mit Ihnen!',
+    'contact.info.fast': 'Schnelle Antwort',
+    'contact.info.free': 'Kostenlose Beratung',
+    'contact.info.swiss': '100% Schweizer',
+
+    // Appointment Page
+    'appointment.title': 'Termin Vereinbaren',
+    'appointment.subtitle': 'Kontaktieren Sie uns direkt per E-Mail oder Telefon, um über Ihr Projekt zu sprechen',
+    
+    'appointment.services.title': 'Unsere Verfügbaren Dienstleistungen',
+    'appointment.services.desc': 'Wir verpflichten uns, schnell zu antworten. Zögern Sie nicht, uns zu kontaktieren, um über Ihr Projekt zu sprechen!',
+    
+    'appointment.service1': 'Technologieanalyse',
+    'appointment.service2': 'Maßgeschneiderte Web-Anwendung',
+    'appointment.service3': 'Mobile Anwendung',
+    'appointment.service4': 'Vollständige Automatisierung',
+    'appointment.service5': 'Systemintegration',
+    'appointment.service6': 'Wartung & Support',
+
+    // Footer
+    'footer.tagline': 'Ihr Schweizer Partner für Automatisierung und digitale Transformation',
+    'footer.links': 'Schnelllinks',
+    'footer.contact': 'Kontakt',
+    'footer.location': 'Schweiz',
+    'footer.made': 'Hergestellt in der Schweiz',
+    'footer.rights': 'Alle Rechte vorbehalten.',
   }
 }
 
@@ -333,7 +489,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Charger la langue sauvegardée
     const savedLang = localStorage.getItem('language') as Language
-    if (savedLang && (savedLang === 'fr' || savedLang === 'en')) {
+    if (savedLang && (savedLang === 'fr' || savedLang === 'en' || savedLang === 'de')) {
       setLanguageState(savedLang)
     }
   }, [])

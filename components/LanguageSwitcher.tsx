@@ -27,6 +27,16 @@ export default function LanguageSwitcher() {
       >
         EN
       </button>
+      <button
+        onClick={() => setLanguage('de')}
+        className={`px-3 py-1.5 rounded-md text-sm font-semibold transition-all duration-200 ${
+          language === 'de'
+            ? 'bg-white text-red-700 shadow-sm'
+            : 'text-gray-600 hover:text-gray-900'
+        }`}
+      >
+        DE
+      </button>
     </div>
   )
 }
