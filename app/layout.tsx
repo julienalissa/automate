@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import InteractiveGrid from '@/components/InteractiveGrid'
 import CursorGlow from '@/components/CursorGlow'
+import Providers from '@/components/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,13 +22,15 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={inter.className}>
-        <InteractiveGrid />
-        <CursorGlow />
-        <Navbar />
-        <main className="min-h-screen relative z-10">
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <InteractiveGrid />
+          <CursorGlow />
+          <Navbar />
+          <main className="min-h-screen relative z-10">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

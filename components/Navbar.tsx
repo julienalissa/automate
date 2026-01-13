@@ -2,10 +2,13 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +19,10 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { href: '/', label: 'Accueil' },
-    { href: '/services', label: 'Services' },
-    { href: '/a-propos', label: 'À Propos' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: t('nav.home') },
+    { href: '/services', label: t('nav.services') },
+    { href: '/a-propos', label: t('nav.about') },
+    { href: '/contact', label: t('nav.contact') },
   ]
 
   return (
@@ -40,7 +43,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -51,11 +54,12 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
+            <LanguageSwitcher />
             <Link
               href="/rendez-vous"
               className="px-6 py-2 btn-primary text-white rounded-lg font-semibold shadow-md hover:shadow-lg hover-shimmer"
             >
-              Prendre RDV
+              {t('nav.appointment')}
             </Link>
           </div>
 
@@ -97,6 +101,16 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-2">
+                <LanguageSwitcher />
+              </div>
+              <Link
+                href="/rendez-vous"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-6 py-3 btn-primary text-white rounded-lg font-semibold shadow-md text-center"
+              >
+                {t('nav.appointment')}
+              </Link>
             </div>
           </div>
         )}
