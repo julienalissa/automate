@@ -6,7 +6,7 @@ export default function About() {
       title: 'Innovation',
       description: 'À la pointe des dernières technologies pour créer des solutions modernes',
       icon: (
-        <svg className="w-10 h-10 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
@@ -15,7 +15,7 @@ export default function About() {
       title: 'Expertise',
       description: 'Formation professionnelle en informatique et passion pour l\'automatisation',
       icon: (
-        <svg className="w-10 h-10 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
         </svg>
       ),
@@ -24,7 +24,7 @@ export default function About() {
       title: 'Engagement',
       description: 'Déterminés à faire évoluer votre entreprise grâce à la technologie',
       icon: (
-        <svg className="w-10 h-10 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
@@ -33,7 +33,7 @@ export default function About() {
       title: 'Personnalisation',
       description: 'Chaque solution est conçue sur mesure pour répondre à vos besoins spécifiques',
       icon: (
-        <svg className="w-10 h-10 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
         </svg>
       ),
@@ -55,7 +55,7 @@ export default function About() {
 
         {/* Story Section */}
         <div className="mb-20 animate-fadeInUp">
-          <div className="bg-gradient-to-br from-red-50 to-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
+          <div className="bg-white border border-gray-100 rounded-2xl p-8 md:p-12 shadow-sm hover-shimmer">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -78,8 +78,8 @@ export default function About() {
                 </p>
               </div>
               <div className="relative">
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-red-500 to-red-600 p-8 flex items-center justify-center shadow-2xl">
-                  <svg className="w-full h-full text-white opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="aspect-square flex items-center justify-center">
+                  <svg className="w-full h-full text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 </div>
@@ -102,38 +102,35 @@ export default function About() {
               {[
                 { 
                   icon: (
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
                   ),
                   title: 'Analyse', 
-                  desc: 'Comprendre vos besoins réels',
-                  gradient: 'from-red-500 to-red-600'
+                  desc: 'Comprendre vos besoins réels'
                 },
                 { 
                   icon: (
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   ),
                   title: 'Création', 
-                  desc: 'Développer des solutions sur mesure',
-                  gradient: 'from-red-500 to-red-600'
+                  desc: 'Développer des solutions sur mesure'
                 },
                 { 
                   icon: (
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   ),
                   title: 'Automatisation', 
-                  desc: 'Optimiser vos processus',
-                  gradient: 'from-red-500 to-violet-600'
+                  desc: 'Optimiser vos processus'
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-white border border-gray-100 rounded-xl p-6 card-hover shadow-sm">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 shadow-lg`}>
+                <div key={index} className="bg-white border border-gray-100 rounded-xl p-6 card-hover shadow-sm hover-shimmer">
+                  <div className="mb-4 flex justify-center">
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -153,7 +150,7 @@ export default function About() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-100 rounded-2xl p-8 text-center card-hover shadow-sm animate-fadeInUp"
+                className="bg-white border border-gray-100 rounded-2xl p-8 text-center card-hover shadow-sm animate-fadeInUp hover-shimmer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="mb-4 flex justify-center">
@@ -168,22 +165,19 @@ export default function About() {
 
         {/* CTA Section */}
         <div className="text-center animate-fadeInUp">
-          <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-3xl p-12 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 section-pattern opacity-10"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Travaillons Ensemble
-              </h2>
-              <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
-                Découvrez comment SwissAutoFlow peut transformer votre entreprise grâce à l'automatisation
-              </p>
-              <a
-                href="/contact"
-                className="inline-block px-10 py-4 bg-white text-red-700 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl"
-              >
-                Contactez-Nous
-              </a>
-            </div>
+          <div className="bg-white border border-gray-100 rounded-2xl p-12 max-w-4xl mx-auto shadow-sm hover-shimmer">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Travaillons Ensemble
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Découvrez comment SwissAutoFlow peut transformer votre entreprise grâce à l'automatisation
+            </p>
+            <a
+              href="/contact"
+              className="inline-block px-10 py-4 btn-primary text-white rounded-lg font-semibold text-lg shadow-xl hover:shadow-2xl"
+            >
+              Contactez-Nous
+            </a>
           </div>
         </div>
       </div>

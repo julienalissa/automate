@@ -358,3 +358,117 @@ body {
 .glow-colorful:hover {
   transform: scale(1.05);
 }
+
+/* Curseur pointant vers email */
+.pointing-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s ease-out;
+}
+
+.pointing-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  background: rgba(59, 130, 246, 0.95);
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.pointing-text-active {
+  background: rgba(16, 185, 129, 0.95);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.6);
+  animation: textPulse 0.6s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes textPulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.6);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.8);
+  }
+}
+
+@keyframes pointingPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.pointing-arrow-pulse {
+  animation: pointingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pointingActive {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.pointing-arrow-active {
+  animation: pointingActive 0.6s ease-in-out infinite;
+}
+
+@keyframes dashMove {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 24;
+  }
+}
+
+.pointing-line-animate {
+  animation: dashMove 1s linear infinite;
+}
+
+@keyframes targetCirclePulse {
+  0%, 100% {
+    r: 40;
+    opacity: 0.4;
+  }
+  50% {
+    r: 50;
+    opacity: 0.2;
+  }
+}
+
+@keyframes targetDotPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.3);
+  }
+}
+
+.target-circle-pulse {
+  animation: targetCirclePulse 2s ease-in-out infinite;
+}
+
+.target-dot-pulse {
+  animation: targetDotPulse 1.5s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
