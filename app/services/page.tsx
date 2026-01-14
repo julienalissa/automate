@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Services() {
@@ -142,12 +143,15 @@ export default function Services() {
                 ))}
               </ul>
 
-              <button className="w-full py-4 btn-primary text-white rounded-2xl font-bold text-lg flex items-center justify-center group mt-auto">
+              <Link 
+                href="/rendez-vous"
+                className="w-full py-4 btn-primary text-white rounded-2xl font-bold text-lg flex items-center justify-center group mt-auto"
+              >
                 <span className="relative z-10">{t('services.cta')}</span>
                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </button>
+              </Link>
             </div>
           ))}
         </div>
